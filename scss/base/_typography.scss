@@ -1,0 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=Chivo:wght@100..900&display=swap');
+
+body {
+  font-weight: var(--font-weight-300);
+  font-size: var(--font-size-rg);
+  line-height: var(--line-height-150);
+}
+
+h1 {
+  font-weight: var(--font-weight-300);
+  font-size: var(--font-size-lg);
+  line-height: var(--line-height-120);
+  text-transform: uppercase;
+}
+
+input, button {
+  font-weight: var(--font-weight-700);
+  font-size: var(--font-size-sm);
+  line-height: var(--line-height-200);
+}

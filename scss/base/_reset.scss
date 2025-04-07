@@ -1,14 +1,16 @@
-@import url("https://fonts.googleapis.com/css2?family=Chivo:wght@100..900&display=swap");
 /***
     The new CSS reset - version 1.11.3 (last updated 25.08.2024)
     GitHub page: https://github.com/elad2412/the-new-css-reset
 ***/
+
 /*
     Remove all the styles of the "User-Agent-Stylesheet", except for the 'display' property
     - The "symbol *" part is to solve Firefox SVG sprite bug
     - The "html" element is excluded, otherwise a bug in Chrome breaks the CSS hyphens property (https://github.com/elad2412/the-new-css-reset/issues/36)
  */
-*:where(:not(html, iframe, canvas, img, svg, video, audio):not(svg *, symbol *)) {
+*:where(
+    :not(html, iframe, canvas, img, svg, video, audio):not(svg *, symbol *)
+  ) {
   all: unset;
   display: revert;
 }
@@ -94,7 +96,7 @@ meter {
 /* revert for bug in Chromium browsers
  - fix for the content editable attribute will work properly.
  - webkit-user-select: auto; added for Safari in case of using user-select:none on wrapper element*/
-:where([contenteditable]:not([contenteditable=false])) {
+:where([contenteditable]:not([contenteditable="false"])) {
   -moz-user-modify: read-write;
   -webkit-user-modify: read-write;
   overflow-wrap: break-word;
@@ -103,7 +105,7 @@ meter {
 }
 
 /* apply back the draggable feature - exist only in Chromium and Safari */
-:where([draggable=true]) {
+:where([draggable="true"]) {
   -webkit-user-drag: element;
 }
 
@@ -117,59 +119,3 @@ meter {
 ::-webkit-details-marker {
   display: none;
 }
-
-:root {
-  --color-green: rgb(84, 230, 175);
-  --color-blue-950: rgb(18, 23, 37);
-  --color-blue-900: rgb(44, 52, 75);
-  --color-blue-600: rgb(90, 102, 138);
-  --color-blue-300: rgb(194, 203, 229);
-  --color-white: rgb(255, 255, 255);
-  --color-red: rgb(251, 60, 60);
-  --font-family-chivo: "Chivo", sans-serif;
-  --font-weight-700: 700;
-  --font-weight-300: 300;
-  --font-size-lg: clamp(2rem, 1rem + 4.1667vw, 3rem);
-  --font-size-rg: clamp(0.875rem, 0.625rem + 1.0417vw, 1.125rem);
-  --font-size-sm: 0.875rem;
-  --line-height-200: 200%;
-  --line-height-150: 150%;
-  --line-height-120: 120%;
-  --spacing-1300: 6.5rem;
-  --spacing-1100: 5.5rem;
-  --spacing-1000: 5rem;
-  --spacing-800: 4rem;
-  --spacing-700: 3.5rem;
-  --spacing-500: 2.5rem;
-  --spacing-400: 2rem;
-  --spacing-300: 1.5rem;
-  --spacing-200: 1rem;
-  --spacing-100: 0.5rem;
-  --spacing-50: 0.25rem;
-  --spacing-0: 0;
-  background-color: var(--color-blue-950);
-  color: var(--color-blue-300);
-  font-family: var(--font-family-chivo);
-  font-size: 16px;
-}
-
-body {
-  font-weight: var(--font-weight-300);
-  font-size: var(--font-size-rg);
-  line-height: var(--line-height-150);
-}
-
-h1 {
-  font-weight: var(--font-weight-300);
-  font-size: var(--font-size-lg);
-  line-height: var(--line-height-120);
-  text-transform: uppercase;
-}
-
-input, button {
-  font-weight: var(--font-weight-700);
-  font-size: var(--font-size-sm);
-  line-height: var(--line-height-200);
-}
-
-/*# sourceMappingURL=style.css.map */
