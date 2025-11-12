@@ -1,4 +1,73 @@
-@layer reset;
+@layer reset, text-presets;
+
+@font-face {
+  font-display: swap;
+  font-family: "Chivo";
+  font-style: normal;
+  font-weight: 300;
+  src: local("Chivo"), url("/fonts/chivo-v21-latin-300.woff2") format("woff2");
+}
+
+@font-face {
+  font-display: swap;
+  font-family: "Chivo";
+  font-style: normal;
+  font-weight: 700;
+  src: local("Chivo"), url("/fonts/chivo-v21-latin-700.woff2") format("woff2");
+}
+
+:root {
+  /* colors */
+  --c-green: rgb(84 230 175);
+  --c-blue-950: rgb(18 23 37);
+  --c-blue-900: rgb(44 52 75);
+  --c-blue-600: rgb(90 102 138);
+  --c-blue-300: rgb(194 203 229);
+  --c-white: rgb(255 255 255);
+  --c-red: rgb(251 60 60);
+
+  --background-color-main: var(--c-blue-950);
+  --text-color-main: var(--c-blue-300);
+
+  /* fonts */
+  --ff-chivo: "Chivo", sans-serif;
+
+  --fw-300: 300;
+  --fw-700: 700;
+
+  --fs-lg: clamp(2rem, 1rem + 4.1667vw, 3rem);
+  --fs-rg: clamp(0.875rem, 0.625rem + 1.0417vw, 1.125rem);
+  --fs-sm: 0.875rem;
+
+  --lh-120: 1.2;
+  --lh-150: 1.5;
+  --lh-200: 2;
+
+  /* root styles */
+  color-scheme: dark;
+  font-family: var(--ff-chivo);
+}
+
+@layer text-presets {
+  [data-text-preset="1"] {
+    font-weight: var(--fw-300);
+    font-size: var(--fs-lg);
+    line-height: var(--lh-120);
+    text-transform: uppercase;
+  }
+
+  [data-text-preset="2"] {
+    font-weight: var(--fw-300);
+    font-size: var(--fs-rg);
+    line-height: var(--lh-150);
+  }
+
+  [data-text-preset="3"] {
+    font-weight: var(--fw-700);
+    font-size: var(--fs-sm);
+    line-height: var(--lh-200);
+  }
+}
 
 @layer reset {
   /***
